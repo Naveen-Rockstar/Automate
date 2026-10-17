@@ -1,0 +1,734 @@
+@import '../styles/tokens.css';
+
+/* ==========================================================================
+   Services Section (Section 03) - Hutomate Design System
+   ========================================================================== */
+
+.services-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-bg-main, #F7F5F0);
+  color: var(--color-text-primary, #111111);
+  padding: clamp(80px, 9vw, 140px) 0;
+  font-family: var(--font-family-primary, 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.services-container {
+  width: 100%;
+  max-width: var(--max-content-width, 1320px);
+  margin: 0 auto;
+  padding: 0 var(--container-padding, clamp(20px, 4vw, 48px));
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Section Header
+   ========================================================================== */
+
+.services-header {
+  margin-bottom: clamp(64px, 8vw, 100px);
+  max-width: 840px;
+}
+
+.services-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary, #66645F);
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  background-color: var(--color-bg-secondary, #F0EEE8);
+  border: 1px solid var(--color-border, #DFDCD4);
+  border-radius: 9999px;
+  width: fit-content;
+}
+
+.services-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent-purple, #7657E8);
+  display: inline-block;
+}
+
+.services-title {
+  font-size: clamp(2.25rem, 1.8rem + 2.5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: var(--color-text-primary, #111111);
+  margin: 0 0 20px 0;
+  white-space: pre-line;
+}
+
+.services-intro {
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--color-text-secondary, #66645F);
+  max-width: 680px;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Services List - Generous spacing (80px+) between varied presentations
+   ========================================================================== */
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(80px, 9vw, 120px);
+  width: 100%;
+}
+
+/* Base Service Card styling */
+.service-item {
+  position: relative;
+  width: 100%;
+  border-radius: 28px;
+  background-color: var(--color-card, #FFFFFF);
+  border: 1px solid var(--color-border, #DFDCD4);
+  box-shadow: 0 4px 24px rgba(17, 17, 17, 0.03), 0 1px 2px rgba(17, 17, 17, 0.02);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.service-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px -10px rgba(17, 17, 17, 0.08), 0 8px 16px -4px rgba(17, 17, 17, 0.03);
+}
+
+/* Sub-elements inside each card */
+.service-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.service-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.service-badge-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.service-name {
+  font-size: clamp(1.75rem, 1.45rem + 1.2vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--color-text-primary, #111111);
+  margin: 0 0 16px 0;
+}
+
+.service-desc {
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.65;
+  color: var(--color-text-secondary, #66645F);
+  margin: 0 0 28px 0;
+  max-width: 560px;
+}
+
+/* Use cases list */
+.service-usecases-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-primary, #111111);
+  margin-bottom: 14px;
+}
+
+.service-usecases {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 20px;
+}
+
+.service-usecase-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-secondary, #66645F);
+  transition: color 0.2s ease;
+}
+
+.service-usecase-marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.service-usecase-item:hover {
+  color: var(--color-text-primary, #111111);
+}
+
+.service-usecase-item:hover .service-usecase-marker {
+  transform: scale(1.1);
+}
+
+/* CTA Link / Button */
+.service-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 14px 26px;
+  border-radius: 9999px;
+  width: fit-content;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-cta-arrow {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-cta:hover .service-cta-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   LAYOUT VARIATION 1: Service 1 - AI Agents (Large feature, visual on right)
+   Accent: #7657E8 (Purple)
+   ========================================================================== */
+
+.service-item--agents {
+  --service-accent: #7657E8;
+  --service-accent-light: rgba(118, 87, 232, 0.08);
+  --service-accent-glow: rgba(118, 87, 232, 0.2);
+  display: grid;
+  grid-template-columns: 1.05fr 1.15fr;
+  padding: clamp(36px, 5vw, 64px);
+  gap: clamp(32px, 4vw, 56px);
+  align-items: center;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FAF9FD 100%);
+  border-color: rgba(118, 87, 232, 0.18);
+}
+
+.service-item--agents:hover {
+  border-color: rgba(118, 87, 232, 0.4);
+}
+
+.service-item--agents .service-badge {
+  background-color: var(--service-accent-light);
+  color: var(--service-accent);
+}
+
+.service-item--agents .service-badge-indicator {
+  background-color: var(--service-accent);
+}
+
+.service-item--agents .service-usecase-marker {
+  background-color: var(--service-accent-light);
+  color: var(--service-accent);
+}
+
+.service-item--agents .service-cta {
+  background-color: #111111;
+  color: #FFFFFF;
+  border: 1px solid #111111;
+}
+
+.service-item--agents .service-cta:hover {
+  background-color: var(--service-accent);
+  border-color: var(--service-accent);
+  box-shadow: 0 8px 24px rgba(118, 87, 232, 0.3);
+}
+
+.service-visual--agents {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(118, 87, 232, 0.06) 0%, rgba(247, 245, 240, 0.4) 70%, transparent 100%);
+  border-radius: 20px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.service-visual--agents svg {
+  width: 100%;
+  height: auto;
+  max-width: 540px;
+  display: block;
+}
+
+/* ==========================================================================
+   LAYOUT VARIATION 2: Service 2 - Workflow Automation (Visual on LEFT, text on right)
+   Accent: #25A86A (Green)
+   ========================================================================== */
+
+.service-item--workflow {
+  --service-accent: #25A86A;
+  --service-accent-light: rgba(37, 168, 106, 0.08);
+  --service-accent-glow: rgba(37, 168, 106, 0.2);
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  padding: clamp(36px, 5vw, 64px);
+  gap: clamp(32px, 4vw, 56px);
+  align-items: center;
+  background: linear-gradient(135deg, #F8FDF9 0%, #FFFFFF 100%);
+  border-color: rgba(37, 168, 106, 0.2);
+}
+
+.service-item--workflow:hover {
+  border-color: rgba(37, 168, 106, 0.45);
+}
+
+.service-item--workflow .service-visual--workflow {
+  order: 1;
+}
+
+.service-item--workflow .service-content {
+  order: 2;
+}
+
+.service-item--workflow .service-badge {
+  background-color: var(--service-accent-light);
+  color: var(--service-accent);
+}
+
+.service-item--workflow .service-badge-indicator {
+  background-color: var(--service-accent);
+}
+
+.service-item--workflow .service-usecase-marker {
+  background-color: var(--service-accent-light);
+  color: var(--service-accent);
+}
+
+.service-item--workflow .service-cta {
+  background-color: #111111;
+  color: #FFFFFF;
+  border: 1px solid #111111;
+}
+
+.service-item--workflow .service-cta:hover {
+  background-color: var(--service-accent);
+  border-color: var(--service-accent);
+  box-shadow: 0 8px 24px rgba(37, 168, 106, 0.3);
+}
+
+.service-visual--workflow {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(37, 168, 106, 0.06) 0%, rgba(247, 245, 240, 0.4) 70%, transparent 100%);
+  border-radius: 20px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.service-visual--workflow svg {
+  width: 100%;
+  height: auto;
+  max-width: 540px;
+  display: block;
+}
+
+/* ==========================================================================
+   LAYOUT VARIATION 3: Service 3 - Voice AI (Waveform + Conversation UI Mockup)
+   Accent: #4389F5 (Blue)
+   ========================================================================== */
+
+.service-item--voice {
+  --service-accent: #4389F5;
+  --service-accent-light: rgba(67, 137, 245, 0.08);
+  --service-accent-glow: rgba(67, 137, 245, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  padding: clamp(36px, 5vw, 64px);
+  gap: clamp(32px, 4vw, 56px);
+  align-items: center;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F9FF 100%);
+  border-color: rgba(67, 137, 245, 0.2);
+}
+
+.service-item--voice:hover {
+  border-color: rgba(67, 137, 245, 0.45);
+}
+
+.service-item--voice .service-badge {
+  background-color: var(--service-accent-light);
+  color: var(--service-accent);
+}
+
+.service-item--voice .service-badge-indicator {
+  background-color: var(--service-accent);
+}
+
+.service-item--voice .service-usecase-marker {
+  background-color: var(--service-accent-light);
+  color: var(--service-accent);
+}
+
+.service-item--voice .service-cta {
+  background-color: #111111;
+  color: #FFFFFF;
+  border: 1px solid #111111;
+}
+
+.service-item--voice .service-cta:hover {
+  background-color: var(--service-accent);
+  border-color: var(--service-accent);
+  box-shadow: 0 8px 24px rgba(67, 137, 245, 0.3);
+}
+
+/* Voice Console Container */
+.voice-mockup-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border, #DFDCD4);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(67, 137, 245, 0.06), 0 2px 6px rgba(17, 17, 17, 0.02);
+  box-sizing: border-box;
+}
+
+.voice-mockup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #F0EEE8;
+}
+
+.voice-call-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.voice-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4389F5;
+  box-shadow: 0 0 0 0 rgba(67, 137, 245, 0.7);
+  animation: voicePulse 2s infinite;
+}
+
+@keyframes voicePulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(67, 137, 245, 0.6);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(67, 137, 245, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(67, 137, 245, 0);
+  }
+}
+
+.voice-latency-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #66645F;
+  background-color: #F0EEE8;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Conversation Transcript */
+.voice-chat-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.voice-bubble {
+  max-width: 90%;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.voice-bubble--agent {
+  align-self: flex-start;
+  background-color: #F3F7FE;
+  color: #111111;
+  border-left: 3px solid #4389F5;
+  border-bottom-left-radius: 4px;
+}
+
+.voice-bubble--caller {
+  align-self: flex-end;
+  background-color: #F7F5F0;
+  color: #111111;
+  border-right: 3px solid #DFDCD4;
+  border-bottom-right-radius: 4px;
+  text-align: right;
+}
+
+.voice-bubble-sender {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+  opacity: 0.7;
+}
+
+/* Waveform Visualizer container */
+.voice-waveform-area {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, #F9FBFF 0%, #EEF4FD 100%);
+  border: 1px solid rgba(67, 137, 245, 0.15);
+  border-radius: 12px;
+}
+
+.voice-waveform-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #4389F5;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.voice-waveform-svg {
+  width: 100%;
+  height: 48px;
+  display: block;
+}
+
+/* Animated waveform bars */
+.waveform-bar {
+  transform-origin: bottom;
+  animation: waveDance 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes waveDance {
+  0% {
+    transform: scaleY(0.4);
+  }
+  100% {
+    transform: scaleY(1.1);
+  }
+}
+
+/* ==========================================================================
+   LAYOUT VARIATION 4: Service 4 - Custom AI Solutions (Modular blocks visual)
+   Accent: #E89A42 (Warm Orange)
+   ========================================================================== */
+
+.service-item--custom {
+  --service-accent: #E89A42;
+  --service-accent-light: rgba(232, 154, 66, 0.08);
+  --service-accent-glow: rgba(232, 154, 66, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  padding: clamp(36px, 5vw, 64px);
+  gap: clamp(32px, 4vw, 56px);
+  align-items: center;
+  background: linear-gradient(135deg, #FFFDF9 0%, #FFFFFF 100%);
+  border-color: rgba(232, 154, 66, 0.2);
+}
+
+.service-item--custom:hover {
+  border-color: rgba(232, 154, 66, 0.45);
+}
+
+.service-item--custom .service-badge {
+  background-color: var(--service-accent-light);
+  color: var(--service-accent);
+}
+
+.service-item--custom .service-badge-indicator {
+  background-color: var(--service-accent);
+}
+
+.service-item--custom .service-usecase-marker {
+  background-color: var(--service-accent-light);
+  color: var(--service-accent);
+}
+
+.service-item--custom .service-cta {
+  background-color: #111111;
+  color: #FFFFFF;
+  border: 1px solid #111111;
+}
+
+.service-item--custom .service-cta:hover {
+  background-color: var(--service-accent);
+  border-color: var(--service-accent);
+  box-shadow: 0 8px 24px rgba(232, 154, 66, 0.3);
+}
+
+.service-visual--custom {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(232, 154, 66, 0.08) 0%, rgba(247, 245, 240, 0.4) 70%, transparent 100%);
+  border-radius: 20px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.service-visual--custom svg {
+  width: 100%;
+  height: auto;
+  max-width: 520px;
+  display: block;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Tablet & Below (<= 1024px) */
+@media (max-width: 1024px) {
+  .service-item--agents,
+  .service-item--workflow,
+  .service-item--voice,
+  .service-item--custom {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 36px 28px;
+  }
+
+  .service-item--workflow .service-visual--workflow {
+    order: 2;
+  }
+
+  .service-item--workflow .service-content {
+    order: 1;
+  }
+
+  .service-visual--agents,
+  .service-visual--workflow,
+  .service-visual--custom,
+  .voice-mockup-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .service-usecases {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 64px 0;
+  }
+
+  .services-header {
+    margin-bottom: 48px;
+  }
+
+  .services-list {
+    gap: 60px;
+  }
+
+  .service-item {
+    border-radius: 20px;
+  }
+
+  .service-item--agents,
+  .service-item--workflow,
+  .service-item--voice,
+  .service-item--custom {
+    padding: 24px 20px;
+    gap: 28px;
+  }
+
+  .service-usecases {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .service-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .voice-mockup-wrapper {
+    padding: 16px;
+  }
+
+  .voice-bubble {
+    max-width: 100%;
+    font-size: 0.8125rem;
+  }
+}
+
+/* Small mobile (<= 390px) */
+@media (max-width: 390px) {
+  .service-item--agents,
+  .service-item--workflow,
+  .service-item--voice,
+  .service-item--custom {
+    padding: 20px 16px;
+  }
+
+  .services-title {
+    font-size: 2rem;
+  }
+}

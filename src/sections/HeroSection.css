@@ -1,0 +1,268 @@
+/* =============================================================================
+   Hutomate Hero Section Styles
+   Expansive, architectural, and immediately visible layout
+   ============================================================================= */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  padding: 24px 0 60px;
+  background-color: var(--color-bg-main, #F7F5F0);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    padding: 28px 0 72px;
+  }
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 2.8vw, 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* =============================================================================
+   EXPANSIVE ARCHITECTURAL CANVAS
+   Fills the desktop viewport gracefully without feeling boxed or narrow
+   ============================================================================= */
+
+.hero-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 1380px;
+  background-color: #FAF9F6;
+  border: 1px solid var(--color-border, #DFDCD4);
+  border-radius: 28px;
+  padding: 40px 32px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 16px 48px -12px rgba(17, 17, 17, 0.05),
+              0 2px 6px rgba(17, 17, 17, 0.02);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Ambient Radial Glow */
+.hero-canvas-glow {
+  position: absolute;
+  top: -140px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(118, 87, 232, 0.09) 0%, rgba(67, 137, 245, 0.05) 40%, rgba(250, 249, 246, 0) 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Editorial Block (Compact, high-impact vertical rhythm) */
+.hero-editorial-block {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* Eyebrow wrap */
+.hero-eyebrow-wrap {
+  margin-bottom: 18px;
+}
+
+/* Headline */
+.hero-headline {
+  font-family: var(--font-family-primary, 'Manrope', sans-serif);
+  font-size: clamp(2.6rem, 5.2vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--color-text-primary, #111111);
+  margin: 0 0 16px;
+  max-width: 920px;
+}
+
+.hero-headline-accent {
+  background: linear-gradient(135deg, #111111 25%, #44403C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtext */
+.hero-subtext {
+  font-family: var(--font-family-primary, 'Manrope', sans-serif);
+  font-size: clamp(1rem, 1.4vw, 1.1875rem);
+  line-height: 1.55;
+  font-weight: 450;
+  color: var(--color-text-secondary, #66645F);
+  max-width: 660px;
+  margin: 0 0 24px;
+  letter-spacing: -0.01em;
+}
+
+/* CTA & Microcopy */
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-microcopy {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--color-text-secondary, #66645F);
+  font-weight: 500;
+}
+
+.microcopy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background-color: var(--color-bg-secondary, #F0EEE8);
+  border: 1px solid var(--color-border, #DFDCD4);
+  padding: 1.5px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--color-text-primary, #111111);
+}
+
+.region-divider {
+  color: var(--color-text-muted, #8E8B83);
+  font-weight: 400;
+}
+
+/* Workflow Diagram Wrapper */
+.hero-diagram-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* =============================================================================
+   INTEGRATION STRIP BELOW HERO CANVAS
+   ============================================================================= */
+
+.hero-integrations-strip {
+  width: 100%;
+  max-width: 1280px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border, #DFDCD4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero-integrations-strip {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+.integrations-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-text-secondary, #66645F);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.integrations-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 10px;
+}
+
+.integration-chip {
+  display: inline-flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border, #DFDCD4);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-primary, #111111);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.integration-chip:hover {
+  border-color: #111111;
+  transform: translateY(-1px);
+}
+
+.integration-chip-more {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-text-secondary, #66645F);
+  font-weight: 500;
+  box-shadow: none;
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN (Tablets & Mobile)
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 16px 0 48px;
+  }
+
+  .hero-canvas {
+    border-radius: 20px;
+    padding: 28px 16px 24px;
+  }
+
+  .hero-editorial-block {
+    margin-bottom: 24px;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.1rem, 7.8vw, 2.9rem);
+    margin-bottom: 14px;
+  }
+
+  .hero-subtext {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .hero-cta-group {
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .hero-integrations-strip {
+    margin-top: 24px;
+    padding-top: 18px;
+  }
+}

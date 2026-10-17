@@ -1,0 +1,399 @@
+/**
+ * Hutomate Design System - Shared Component Styles
+ * -----------------------------------------------------------------------------
+ * Production-ready components: Buttons, Section Headers, Container, Cards,
+ * Badges, and interactive elements with accessible states and fluid responsiveness.
+ */
+
+/* =============================================================================
+ * CONTAINER & SECTION LAYOUT
+ * ============================================================================= */
+
+.container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  position: relative;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  position: relative;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  position: relative;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+}
+
+.section-hero {
+  padding-top: clamp(80px, 12vw, 160px);
+  padding-bottom: clamp(60px, 8vw, 120px);
+}
+
+.section-header {
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+
+.section-header.text-center {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 760px;
+}
+
+/* =============================================================================
+ * SECTION TYPOGRAPHY (Editorial Style)
+ * ============================================================================= */
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-uppercase);
+  color: var(--color-accent-purple);
+  margin-bottom: var(--space-4);
+  line-height: var(--line-height-none);
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent-purple);
+}
+
+.section-label-green {
+  color: var(--color-accent-green);
+}
+.section-label-green::before {
+  background-color: var(--color-accent-green);
+}
+
+.section-label-blue {
+  color: var(--color-accent-blue);
+}
+.section-label-blue::before {
+  background-color: var(--color-accent-blue);
+}
+
+.section-heading {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-tighter);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  text-wrap: balance;
+}
+
+.section-heading-hero {
+  font-size: var(--font-size-hero);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tightest);
+  font-weight: var(--font-weight-extrabold);
+}
+
+.section-heading-sub {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+  margin-bottom: var(--space-3);
+}
+
+.section-body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  color: var(--color-text-secondary);
+  max-width: 680px;
+  text-wrap: pretty;
+}
+
+.section-body-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-body-lg {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-relaxed);
+}
+
+/* =============================================================================
+ * BUTTONS
+ * ============================================================================= */
+
+/* Base Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  letter-spacing: var(--letter-spacing-tight);
+  padding: 14px 28px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    background-color var(--duration-fast) var(--ease-smooth),
+    color var(--duration-fast) var(--ease-smooth),
+    border-color var(--duration-fast) var(--ease-smooth),
+    box-shadow var(--duration-fast) var(--ease-smooth),
+    transform var(--duration-fast) var(--ease-smooth);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Primary Button: Solid dark background with clean elevation on hover */
+.btn-primary {
+  background-color: var(--color-text-primary);
+  color: #FFFFFF;
+  border-color: var(--color-text-primary);
+  box-shadow: 0 2px 4px rgba(17, 17, 17, 0.08);
+}
+
+.btn-primary:hover {
+  background-color: #242424;
+  border-color: #242424;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(17, 17, 17, 0.2);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 6px rgba(17, 17, 17, 0.12);
+}
+
+/* Secondary Button: Outlined with refined neutral border */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-card);
+  border-color: var(--color-text-primary);
+  color: var(--color-text-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn-secondary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Ghost Button: Minimal transparent button */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border-color: transparent;
+  padding: 12px 18px;
+}
+
+.btn-ghost:hover {
+  background-color: rgba(17, 17, 17, 0.05);
+  color: var(--color-text-primary);
+}
+
+.btn-ghost:active {
+  background-color: rgba(17, 17, 17, 0.08);
+  transform: scale(0.98);
+}
+
+/* Accent Button: Purple focal CTA */
+.btn-accent {
+  background-color: var(--color-accent-purple);
+  color: #FFFFFF;
+  border-color: var(--color-accent-purple);
+  box-shadow: 0 4px 14px rgba(118, 87, 232, 0.28);
+}
+
+.btn-accent:hover {
+  background-color: #6546d9;
+  border-color: #6546d9;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(118, 87, 232, 0.38);
+}
+
+.btn-accent:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Button Sizes */
+.btn-sm {
+  padding: 10px 20px;
+  font-size: var(--font-size-xs);
+  min-height: 38px;
+}
+
+.btn-lg {
+  padding: 16px 36px;
+  font-size: var(--font-size-base);
+  min-height: 52px;
+}
+
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-full);
+}
+
+.btn-icon-sm {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: var(--radius-full);
+}
+
+/* Button Arrow Micro-interaction */
+.btn .icon-arrow {
+  display: inline-block;
+  transition: transform var(--duration-fast) var(--ease-smooth);
+}
+
+.btn:hover .icon-arrow {
+  transform: translateX(4px);
+}
+
+/* =============================================================================
+ * CARDS & SURFACES
+ * ============================================================================= */
+
+.card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: clamp(24px, 4vw, 40px);
+  box-shadow: var(--shadow-subtle);
+  transition:
+    transform var(--duration-normal) var(--ease-smooth),
+    box-shadow var(--duration-normal) var(--ease-smooth),
+    border-color var(--duration-normal) var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+  border-color: #CCC8BE;
+  box-shadow: var(--shadow-card);
+}
+
+.card-flat {
+  box-shadow: none;
+}
+
+.card-dark {
+  background-color: var(--color-card-dark);
+  color: #FFFFFF;
+  border-color: #2A2A2A;
+}
+
+.card-dark p {
+  color: #A3A3A3;
+}
+
+/* =============================================================================
+ * BADGES & PILLS
+ * ============================================================================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.badge-purple {
+  background-color: var(--color-accent-purple-tint);
+  color: var(--color-accent-purple);
+  border-color: rgba(118, 87, 232, 0.2);
+}
+
+.badge-green {
+  background-color: var(--color-accent-green-tint);
+  color: var(--color-accent-green);
+  border-color: rgba(37, 168, 106, 0.2);
+}
+
+.badge-blue {
+  background-color: var(--color-accent-blue-tint);
+  color: var(--color-accent-blue);
+  border-color: rgba(67, 137, 245, 0.2);
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: currentColor;
+}
+
+/* =============================================================================
+ * DIVIDERS
+ * ============================================================================= */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border);
+  border: none;
+  margin: var(--space-12) 0;
+}

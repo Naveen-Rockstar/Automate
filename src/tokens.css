@@ -1,0 +1,53 @@
+@import './styles/tokens.css';
+
+:root {
+  /* Backward-compatible shorthands mapped to styles/tokens.css */
+  --bg-main: var(--color-bg-main, #F7F5F0);
+  --bg-secondary: var(--color-bg-secondary, #F0EEE8);
+  --bg-card: var(--color-card, #FFFFFF);
+  --text-primary: var(--color-text-primary, #111111);
+  --text-secondary: var(--color-text-secondary, #66645F);
+  --text-muted: var(--color-text-muted, #8E8B83);
+  --border-color: var(--color-border, #DFDCD4);
+  --border: var(--color-border, #DFDCD4);
+
+  --accent-purple: var(--color-accent-purple, #7657E8);
+  --accent-purple-light: var(--color-accent-purple-tint, rgba(118, 87, 232, 0.08));
+  --accent-purple-glow: var(--color-accent-purple-glow, rgba(118, 87, 232, 0.25));
+
+  --accent-green: var(--color-accent-green, #25A86A);
+  --accent-green-light: var(--color-accent-green-tint, rgba(37, 168, 106, 0.08));
+
+  --accent-blue: var(--color-accent-blue, #4389F5);
+  --accent-blue-light: var(--color-accent-blue-tint, rgba(67, 137, 245, 0.08));
+
+  --accent-orange: var(--color-accent-orange, #E89A42);
+  --accent-orange-light: var(--color-accent-orange-tint, rgba(232, 154, 66, 0.08));
+
+  --accent-coral: var(--color-accent-coral, #F16B75);
+  --accent-coral-light: var(--color-accent-coral-tint, rgba(241, 107, 117, 0.08));
+
+  --font-family: var(--font-family-primary, 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+
+  --container-max-width: var(--container-xl, 1280px);
+  --container-padding: 24px;
+  --header-height: 80px;
+
+  --radius-xs: var(--radius-xs, 4px);
+  --radius-sm: var(--radius-sm, 8px);
+  --radius-md: var(--radius-md, 12px);
+  --radius-lg: var(--radius-lg, 20px);
+  --radius-xl: var(--radius-xl, 32px);
+  --radius-full: var(--radius-full, 9999px);
+
+  --shadow-sm: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.04));
+  --shadow-card: var(--shadow-card, 0 4px 20px rgba(0, 0, 0, 0.04));
+  --shadow-hover: var(--shadow-hover, 0 12px 32px rgba(0, 0, 0, 0.08));
+  --shadow-button: 0 2px 8px rgba(17, 17, 17, 0.12);
+  --shadow-button-hover: 0 6px 18px rgba(17, 17, 17, 0.22);
+  --shadow-node: 0 6px 20px -2px rgba(17, 17, 17, 0.05);
+
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}

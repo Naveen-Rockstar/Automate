@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+/**
+ * Hutomate Design System - Design Tokens
+ * -----------------------------------------------------------------------------
+ * Premium AI Automation aesthetic featuring a sophisticated warm-neutral palette,
+ * Manrope typography hierarchy, 4px modular spacing scale, and responsive scaling.
+ *
+ * Breakpoints supported: 1440px, 1280px, 1024px, 768px, 390px, 360px
+ */
+
+:root {
+  /* ===========================================================================
+   * COLOR PALETTE
+   * =========================================================================== */
+
+  /* Neutral Backgrounds */
+  --color-bg-main: #F7F5F0;
+  --color-bg-secondary: #F0EEE8;
+  --color-bg-tertiary: #E8E5DD;
+
+  /* Text & Inks */
+  --color-text-primary: #111111;
+  --color-text-secondary: #66645F;
+  --color-text-muted: #8E8B83;
+  --color-text-inverse: #FFFFFF;
+
+  /* Borders & Dividers */
+  --color-border: #DFDCD4;
+  --color-border-subtle: #EBE8E0;
+  --color-border-strong: #C4C0B6;
+  --color-border-focus: #111111;
+
+  /* Surface / Cards */
+  --color-card: #FFFFFF;
+  --color-card-subtle: #FAF9F6;
+  --color-card-dark: #111111;
+
+  /* Brand Accents */
+  --color-accent-purple: #7657E8;
+  --color-accent-green: #25A86A;
+  --color-accent-blue: #4389F5;
+  --color-accent-orange: #E89A42;
+  --color-accent-coral: #F16B75;
+
+  /* Accent Tints & Backgrounds (for pills, badges, soft glow) */
+  --color-accent-purple-tint: rgba(118, 87, 232, 0.08);
+  --color-accent-purple-light: #ECE7FD;
+  --color-accent-purple-glow: rgba(118, 87, 232, 0.25);
+
+  --color-accent-green-tint: rgba(37, 168, 106, 0.08);
+  --color-accent-green-light: #E7F6EE;
+
+  --color-accent-blue-tint: rgba(67, 137, 245, 0.08);
+  --color-accent-blue-light: #EAF2FE;
+
+  --color-accent-orange-tint: rgba(232, 154, 66, 0.08);
+  --color-accent-orange-light: #FDF4E9;
+
+  --color-accent-coral-tint: rgba(241, 107, 117, 0.08);
+  --color-accent-coral-light: #FDEEEE;
+
+  /* Overlays */
+  --color-overlay-dark: rgba(17, 17, 17, 0.6);
+  --color-overlay-light: rgba(247, 245, 240, 0.8);
+
+  /* ===========================================================================
+   * TYPOGRAPHY
+   * =========================================================================== */
+
+  /* Font Families */
+  --font-family-primary: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-family-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Fluid Responsive Font Scale using clamp()
+   * Scaled from mobile (360px-390px) up to large desktop (1440px+)
+   */
+  --font-size-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);       /* 12px -> 13px */
+  --font-size-sm: clamp(0.8125rem, 0.78rem + 0.2vw, 0.875rem);       /* 13px -> 14px */
+  --font-size-base: clamp(0.9375rem, 0.89rem + 0.25vw, 1rem);        /* 15px -> 16px */
+  --font-size-md: clamp(1.0625rem, 1rem + 0.35vw, 1.125rem);         /* 17px -> 18px */
+  --font-size-lg: clamp(1.125rem, 1.05rem + 0.5vw, 1.25rem);         /* 18px -> 20px */
+  --font-size-xl: clamp(1.25rem, 1.125rem + 0.7vw, 1.5rem);          /* 20px -> 24px */
+  --font-size-2xl: clamp(1.5rem, 1.325rem + 1vw, 1.875rem);          /* 24px -> 30px */
+  --font-size-3xl: clamp(1.75rem, 1.5rem + 1.4vw, 2.25rem);          /* 28px -> 36px */
+  --font-size-4xl: clamp(2.125rem, 1.75rem + 2.2vw, 3rem);           /* 34px -> 48px */
+  --font-size-5xl: clamp(2.5rem, 1.95rem + 3.2vw, 4.25rem);          /* 40px -> 68px */
+  --font-size-hero: clamp(2.875rem, 1.85rem + 4.8vw, 5.5rem);        /* 46px -> 88px */
+  --font-size-display: clamp(3.25rem, 2rem + 6.2vw, 6.75rem);        /* 52px -> 108px */
+
+  /* Line Heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.08;
+  --line-height-snug: 1.2;
+  --line-height-heading: 1.25;
+  --line-height-body: 1.6;
+  --line-height-relaxed: 1.75;
+
+  /* Letter Spacing */
+  --letter-spacing-tightest: -0.035em;
+  --letter-spacing-tighter: -0.025em;
+  --letter-spacing-tight: -0.015em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.02em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-uppercase: 0.1em;
+
+  /* ===========================================================================
+   * SPACING (4px Base Scale)
+   * =========================================================================== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-30: 120px;
+  --space-40: 160px;
+
+  /* Semantic Layout Spacing */
+  --container-padding: clamp(20px, 4vw, 48px);
+  --section-padding-y: clamp(64px, 8vw, 120px);
+  --section-gap: clamp(48px, 6vw, 96px);
+
+  /* ===========================================================================
+   * BORDER RADIUS
+   * =========================================================================== */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-hero: 32px;
+  --radius-full: 9999px;
+
+  /* ===========================================================================
+   * SHADOWS
+   * =========================================================================== */
+  --shadow-subtle: 0 1px 3px rgba(17, 17, 17, 0.04), 0 1px 2px rgba(17, 17, 17, 0.02);
+  --shadow-card: 0 4px 20px -2px rgba(17, 17, 17, 0.05), 0 2px 6px -1px rgba(17, 17, 17, 0.03);
+  --shadow-elevated: 0 16px 36px -6px rgba(17, 17, 17, 0.08), 0 6px 16px -2px rgba(17, 17, 17, 0.04);
+  --shadow-hover: 0 20px 40px -8px rgba(17, 17, 17, 0.12), 0 8px 16px -4px rgba(17, 17, 17, 0.05);
+  --shadow-modal: 0 32px 72px -12px rgba(17, 17, 17, 0.2), 0 12px 24px -4px rgba(17, 17, 17, 0.08);
+  --shadow-purple-glow: 0 8px 30px rgba(118, 87, 232, 0.25);
+
+  /* ===========================================================================
+   * LAYOUT & BREAKPOINTS
+   * Reference values for media queries:
+   * 1440px: Desktop Large / Max content bound
+   * 1280px: Desktop Standard
+   * 1024px: Tablet Landscape / Small Desktop
+   * 768px:  Tablet Portrait
+   * 390px:  Mobile Large (iPhone 14/15/16)
+   * 360px:  Mobile Small (Compact Android)
+   * =========================================================================== */
+  --max-content-width: 1440px;
+
+  /* ===========================================================================
+   * TRANSITIONS & EASING
+   * =========================================================================== */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-sharp: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-medium: 350ms;
+  --duration-slow: 600ms;
+  --duration-xslow: 1000ms;
+
+  --transition-fast: all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-colors: color 200ms ease, background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  --transition-transform: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ===========================================================================
+   * Z-INDEX SCALE
+   * =========================================================================== */
+  --z-base: 1;
+  --z-elevated: 10;
+  --z-sticky: 100;
+  --z-header: 500;
+  --z-overlay: 900;
+  --z-modal: 1000;
+  --z-toast: 1100;
+}
