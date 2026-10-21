@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from '../router/Router';
 import './Button.css';
 
 /**
  * Reusable Button component for Hutomate
  * 
- * @param {'primary' | 'secondary' | 'ghost'} variant - Visual appearance
+ * @param {'primary' | 'secondary' | 'ghost' | 'accent'} variant - Visual appearance
  * @param {'sm' | 'md' | 'lg'} size - Button size
- * @param {string} href - If provided, renders as <a> link, otherwise <button>
+ * @param {string} href - If provided, renders as internal Link or <a>, otherwise <button>
  * @param {boolean} arrow - Appends a smooth animating arrow icon
  * @param {React.ReactNode} icon - Optional leading icon
  */
@@ -47,6 +48,19 @@ export default function Button({
   );
 
   if (href) {
+    if (href.startsWith('/') && !href.startsWith('//')) {
+      return (
+        <Link
+          to={href}
+          className={classes}
+          onClick={onClick}
+          {...restProps}
+        >
+          {content}
+        </Link>
+      );
+    }
+
     return (
       <a
         href={href}

@@ -1,0 +1,67 @@
+/* Contact Page Styles */
+.contact-page {
+  width: 100%;
+}
+
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contact-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contact-info-block {
+  padding: 32px;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e5e5);
+  border-radius: var(--radius-lg, 12px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-info-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.contact-info-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.direct-email-link {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-purple, #6366f1);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-top: 8px;
+}
+
+.contact-form-card {
+  padding: 40px;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e5e5);
+  border-radius: var(--radius-lg, 12px);
+}
+
+@media (max-width: 900px) {
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .contact-form-card {
+    padding: 24px 20px;
+  }
+}

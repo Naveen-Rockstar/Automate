@@ -368,8 +368,8 @@ pre {
 /* 768px - Tablet Portrait */
 @media (max-width: 768px) {
   :root {
-    --container-padding: 24px;
-    --section-padding-y: 64px;
+    --container-padding: 20px;
+    --section-padding-y: 56px;
   }
 
   .grid-cols-4,
@@ -377,20 +377,25 @@ pre {
   .grid-cols-2 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
-}
 
-/* 390px - Mobile Large */
-@media (max-width: 390px) {
-  :root {
-    --container-padding: 16px;
-    --section-padding-y: 48px;
+  /* Prevent iOS Safari auto-zoom on input focus */
+  input, select, textarea {
+    font-size: 16px !important;
   }
 }
 
-/* 360px - Mobile Small */
+/* 480px - Mobile Standard & Large */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 16px;
+    --section-padding-y: 44px;
+  }
+}
+
+/* 360px - Mobile Small (320px - 360px) */
 @media (max-width: 360px) {
   :root {
-    --container-padding: 14px;
-    --section-padding-y: 40px;
+    --container-padding: 12px;
+    --section-padding-y: 36px;
   }
 }

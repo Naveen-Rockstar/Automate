@@ -20,8 +20,32 @@ const INITIAL_FORM_DATA = {
   challenge: ''
 };
 
+const getInitialContactData = () => {
+  const initial = { ...INITIAL_FORM_DATA };
+  if (typeof window === 'undefined') return initial;
+
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const serviceParam = params.get('service');
+    if (serviceParam) {
+      if (serviceParam.includes('voice') || serviceParam.includes('receptionist')) {
+        initial.service = 'Voice AI';
+      } else if (serviceParam.includes('workflow')) {
+        initial.service = 'Workflow Automation';
+      } else if (serviceParam.includes('custom') || serviceParam.includes('integration')) {
+        initial.service = 'Custom AI';
+      } else if (serviceParam.includes('agent')) {
+        initial.service = 'AI Agents';
+      }
+    }
+  } catch {
+    // Ignore URL parsing errors
+  }
+  return initial;
+};
+
 export default function ContactSection() {
-  const [formData, setFormData] = useState(INITIAL_FORM_DATA);
+  const [formData, setFormData] = useState(() => getInitialContactData());
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -113,21 +137,21 @@ export default function ContactSection() {
         <div className="contact-layout">
           {/* Left Column: Headline, subtext, CTA buttons, and trust metrics */}
           <div className="contact-info-column">
-            <div className="contact-eyebrow">
+            <div className="contact-eyebrow reveal-on-scroll">
               <span className="contact-eyebrow-dot" aria-hidden="true" />
-              <span>07 / CONTACT</span>
+              <span>LET'S TALK</span>
             </div>
 
-            <h2 id="contact-heading" className="contact-headline">
+            <h2 id="contact-heading" className="contact-headline reveal-on-scroll reveal-delay-1">
               Let's make your business{'\n'}work smarter.
             </h2>
 
-            <p className="contact-subtext">
+            <p className="contact-subtext reveal-on-scroll reveal-delay-2">
               Tell us how your business operates, what slows your team down, and where you want to improve. We'll explore whether AI automation is the right fit.
             </p>
 
             {/* Action buttons */}
-            <div className="contact-cta-actions">
+            <div className="contact-cta-actions reveal-on-scroll reveal-delay-2">
               <button
                 type="button"
                 className="contact-btn contact-btn--primary"
@@ -146,7 +170,7 @@ export default function ContactSection() {
             </div>
 
             {/* Trust highlights */}
-            <div className="contact-trust-list">
+            <div className="contact-trust-list reveal-on-scroll reveal-delay-3">
               <div className="contact-trust-item">
                 <Clock size={18} className="contact-trust-icon" aria-hidden="true" />
                 <div className="contact-trust-text">
@@ -174,7 +198,7 @@ export default function ContactSection() {
           </div>
 
           {/* Right Column: Contact Form */}
-          <div className="contact-form-column">
+          <div className="contact-form-column reveal-on-scroll reveal-delay-2">
             <div className="contact-form-card">
               {isSubmitted ? (
                 /* Success Notice State */

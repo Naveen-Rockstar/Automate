@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Hutomate Brand Logo Styles
+   Accurate lockup: 3-lobe organic symbol + bold modern sans-serif wordmark
+   ========================================================================== */
+
+.hutomate-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  width: auto;
+  user-select: none;
+  line-height: 1;
+}
+
+.hutomate-brand-img {
+  height: 28px;
+  width: auto;
+  max-width: 145px;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.hutomate-brand-lockup:hover .hutomate-brand-img {
+  transform: scale(1.02);
+}
+
+.hutomate-logo-symbol-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.hutomate-brand-lockup:hover .hutomate-logo-symbol-wrap {
+  transform: scale(1.05);
+}
+
+.hutomate-symbol-svg {
+  display: block;
+}
+
+.hutomate-logo-wordmark {
+  font-family: var(--font-primary, 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--text-primary, #111111);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Navbar specific lockup sizing */
+.header-brand .hutomate-brand-lockup {
+  display: flex;
+  align-items: center;
+}
+
+/* Footer brand lockup */
+.footer-brand .hutomate-brand-lockup {
+  display: flex;
+  align-items: center;
+}
+
+.footer-brand .hutomate-brand-img {
+  height: 32px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .hutomate-brand-img {
+    height: 26px;
+  }
+}

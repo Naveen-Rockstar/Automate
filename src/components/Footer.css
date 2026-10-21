@@ -112,6 +112,10 @@
   margin: 0 0 20px 0;
 }
 
+.footer-col-title--sub {
+  margin-top: 28px;
+}
+
 .footer-links-list {
   display: flex;
   flex-direction: column;
@@ -293,6 +297,18 @@
   .footer-bottom-actions {
     width: 100%;
     justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding-top: 44px;
+    padding-bottom: 28px;
+  }
+
+  .footer-bottom-actions {
+    flex-wrap: wrap;
+    gap: 12px;
   }
 }
 

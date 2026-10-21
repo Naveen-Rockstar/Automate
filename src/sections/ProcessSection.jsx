@@ -49,20 +49,20 @@ export default function ProcessSection() {
       <div className="process-container">
         {/* Section Header */}
         <header className="process-header">
-          <div className="process-eyebrow">
+          <div className="process-eyebrow reveal-on-scroll">
             <span className="process-eyebrow-dot"></span>
-            <span>04 / PROCESS</span>
+            <span>HOW WE WORK</span>
           </div>
-          <h2 id="process-title" className="process-title">
+          <h2 id="process-title" className="process-title reveal-on-scroll reveal-delay-1">
             From business challenge{'\n'}to intelligent solution.
           </h2>
-          <p className="process-intro">
+          <p className="process-intro reveal-on-scroll reveal-delay-2">
             A proven, four-stage delivery framework engineered to move smoothly from initial discovery to reliable production deployment.
           </p>
         </header>
 
         {/* Timeline Component */}
-        <div className="process-timeline-wrapper">
+        <div className="process-timeline-wrapper reveal-on-scroll reveal-delay-3">
           {/* Connecting SVG line behind nodes on Desktop */}
           <svg
             className="process-svg-track"

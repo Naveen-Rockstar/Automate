@@ -35,7 +35,7 @@ export default function HeroSection() {
           <div className="hero-editorial-block">
             {/* Top Eyebrow */}
             <div className="hero-eyebrow-wrap">
-              <SectionLabel number="01" text="Intelligent Enterprise Automation" />
+              <SectionLabel text="Intelligent Enterprise Automation" />
             </div>
 
             {/* Main Hero Headline */}

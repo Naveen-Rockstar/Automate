@@ -66,17 +66,17 @@ export default function AboutSection() {
           {/* Left Column (60% on desktop): Editorial narrative */}
           <div className="about-content-column">
             <header className="about-header">
-              <div className="about-eyebrow">
+              <div className="about-eyebrow reveal-on-scroll">
                 <span className="about-eyebrow-dot" aria-hidden="true" />
-                <span>06 / ABOUT</span>
+                <span>ABOUT HUTOMATE</span>
               </div>
               
-              <h2 id="about-heading" className="about-headline">
+              <h2 id="about-heading" className="about-headline reveal-on-scroll reveal-delay-1">
                 Technology that starts{'\n'}with understanding.
               </h2>
             </header>
 
-            <div className="about-body">
+            <div className="about-body reveal-on-scroll reveal-delay-2">
               <p className="about-paragraph about-paragraph--lead">
                 Hutomate focuses on understanding business processes before recommending technology. We believe the best automation solutions come from deeply understanding how a business operates, what challenges it faces, and where intelligent systems can make a genuine difference.
               </p>
@@ -87,7 +87,7 @@ export default function AboutSection() {
             </div>
 
             {/* Editorial Highlight Callout */}
-            <div className="about-editorial-callout" role="region" aria-label="Our philosophy">
+            <div className="about-editorial-callout reveal-on-scroll reveal-delay-3" role="region" aria-label="Our philosophy">
               <div className="about-callout-quote-mark" aria-hidden="true">“</div>
               <blockquote className="about-callout-quote">
                 Automation should reduce friction, not introduce new layers of complexity.
@@ -103,18 +103,18 @@ export default function AboutSection() {
 
           {/* Right Column (40% on desktop): 6 Values/Principles list */}
           <div className="about-principles-column">
-            <div className="about-principles-header">
+            <div className="about-principles-header reveal-on-scroll">
               <span className="about-principles-caption">Guiding Principles</span>
               <span className="about-principles-count">6 Foundational Standards</span>
             </div>
 
             <ul className="about-principles-list" role="list">
-              {PRINCIPLES.map((principle) => {
+              {PRINCIPLES.map((principle, index) => {
                 const IconComp = principle.icon;
                 return (
                   <li
                     key={principle.id}
-                    className="about-principle-item"
+                    className={`about-principle-item reveal-on-scroll reveal-delay-${(index % 3) + 1}`}
                     style={{ '--item-accent': principle.accent }}
                   >
                     <div

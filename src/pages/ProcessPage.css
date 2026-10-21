@@ -1,0 +1,231 @@
+/* =============================================================================
+   Process Page Styles (Section 5 Redesign)
+   Scroll-triggered reveals, animated progress line rail, active indicator
+   ============================================================================= */
+
+.process-page {
+  width: 100%;
+  background-color: var(--bg-main, #F7F5F0);
+}
+
+.process-timeline-layout {
+  position: relative;
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Thin vertical progress rail on desktop */
+.process-progress-rail {
+  position: relative;
+  width: 4px;
+  flex-shrink: 0;
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+.rail-background-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1px;
+  width: 2px;
+  background-color: var(--border-color, #E5E3DC);
+  border-radius: 2px;
+}
+
+.rail-active-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #7657E8 0%, #10B981 100%);
+  border-radius: 4px;
+  transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(118, 87, 232, 0.4);
+}
+
+/* Timeline */
+.process-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex-grow: 1;
+}
+
+.process-step-row {
+  display: grid;
+  grid-template-columns: 100px 1.2fr 1fr;
+  gap: 32px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color, #E5E3DC);
+  border-radius: 16px;
+  padding: 36px 32px;
+  align-items: start;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.process-step-row:hover {
+  transform: translateY(-2px);
+  border-color: rgba(118, 87, 232, 0.4);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.06);
+}
+
+.process-step-row.is-active-phase {
+  border-color: #7657E8;
+  box-shadow: 0 12px 32px -8px rgba(118, 87, 232, 0.15);
+}
+
+.step-num-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.step-num-big {
+  font-family: var(--font-mono, monospace);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #7657E8;
+  line-height: 1;
+}
+
+.step-phase-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted, #71717A);
+}
+
+.step-active-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #10B981;
+  background-color: rgba(16, 185, 129, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.step-active-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #10B981;
+  animation: stepDotPulse 1.6s infinite;
+}
+
+@keyframes stepDotPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+}
+
+.step-main-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-title {
+  font-family: var(--font-primary, 'Manrope', sans-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary, #111111);
+  margin: 0 0 10px 0;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.step-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #52525B);
+  margin: 0;
+}
+
+.step-details-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background-color: #F8FAFC;
+  border: 1px solid var(--border-color, #E5E3DC);
+  border-radius: 12px;
+  padding: 18px 20px;
+  transition: all 0.2s ease;
+}
+
+.process-step-row:hover .step-details-col {
+  background-color: #FFFFFF;
+  border-color: rgba(118, 87, 232, 0.25);
+}
+
+.step-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #111111;
+}
+
+.info-val {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #52525B);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .rail-active-line,
+  .process-step-row,
+  .step-active-dot {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .process-progress-rail {
+    display: none;
+  }
+
+  .process-step-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .step-num-col {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .step-active-indicator {
+    margin-top: 0;
+  }
+}

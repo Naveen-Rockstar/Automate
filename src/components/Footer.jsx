@@ -1,39 +1,14 @@
 import React from 'react';
 import { ArrowUp, Globe } from 'lucide-react';
+import { Link } from '../router/Router';
+import HutomateLogo, { HutomateSymbol } from './HutomateLogo';
 import './Footer.css';
 
-/**
- * Hutomate Connected Node Brand Symbol for Dark Surfaces
- */
 export function FooterBrandSymbol({ size = 30, className = '' }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 32 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`footer-brand-symbol ${className}`}
-      aria-hidden="true"
-    >
-      {/* Network Connections */}
-      <line x1="16" y1="6" x2="7" y2="17" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1.75" strokeLinecap="round" />
-      <line x1="16" y1="6" x2="25" y2="15" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1.75" strokeLinecap="round" />
-      <line x1="7" y1="17" x2="16" y2="26" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1.75" strokeLinecap="round" />
-      <line x1="25" y1="15" x2="16" y2="26" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1.75" strokeLinecap="round" />
-      <line x1="16" y1="6" x2="16" y2="26" stroke="var(--color-accent-purple, #7657E8)" strokeWidth="1.75" strokeDasharray="2 2" strokeLinecap="round" />
-      
-      {/* Network Nodes */}
-      <circle cx="16" cy="6" r="3.25" fill="#FFFFFF" />
-      <circle cx="7" cy="17" r="3" fill="#FFFFFF" />
-      <circle cx="25" cy="15" r="3" fill="#FFFFFF" />
-      <circle cx="16" cy="26" r="3.5" fill="var(--color-accent-purple, #7657E8)" />
-      
-      {/* Pulse ring */}
-      <circle cx="16" cy="26" r="5.5" stroke="var(--color-accent-purple, #7657E8)" strokeWidth="1" strokeOpacity="0.45" />
-    </svg>
-  );
+  return <HutomateSymbol size={size} color="#FFFFFF" className={className} />;
 }
+
+const CURRENT_YEAR = new Date().getFullYear();
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -47,98 +22,83 @@ export default function Footer() {
         <div className="footer-grid">
           {/* Column 1: Brand & Bio */}
           <div className="footer-col footer-col--brand">
-            <a href="#" className="footer-brand" aria-label="Hutomate home">
-              <span className="footer-symbol-wrapper">
-                <FooterBrandSymbol size={30} />
-              </span>
-              <span className="footer-wordmark">Hutomate</span>
-            </a>
+            <Link to="/" className="footer-brand" aria-label="Hutomate home">
+              <HutomateLogo color="#FFFFFF" symbolSize={30} />
+            </Link>
 
             <p className="footer-description">
-              AI automation systems that help businesses simplify operations and grow faster.
+              AI automation and implementation partner helping businesses identify repetitive work, connect existing tools, and deploy custom intelligent systems.
             </p>
 
             <div className="footer-region-badge">
               <Globe size={14} className="footer-badge-icon" aria-hidden="true" />
-              <span>India & United States</span>
+              <span>Global Client Delivery (USA, UK, Australia, India)</span>
             </div>
           </div>
 
-          {/* Column 2: Navigation */}
-          <nav className="footer-col" aria-label="Footer Navigation">
-            <h4 className="footer-col-title">Navigation</h4>
+          {/* Column 2: EXPLORE */}
+          <nav className="footer-col" aria-label="Explore Links">
+            <h4 className="footer-col-title">Explore</h4>
             <ul className="footer-links-list">
               <li>
-                <a href="#services" className="footer-link">Services</a>
+                <Link to="/capabilities" className="footer-link">Capabilities</Link>
               </li>
               <li>
-                <a href="#solutions" className="footer-link">Solutions</a>
+                <Link to="/use-cases" className="footer-link">Use Cases</Link>
               </li>
               <li>
-                <a href="#how-it-works" className="footer-link">How It Works</a>
+                <Link to="/industries" className="footer-link">Industries</Link>
               </li>
               <li>
-                <a href="#about" className="footer-link">About</a>
-              </li>
-              <li>
-                <a href="#contact" className="footer-link">Contact</a>
+                <Link to="/blueprints" className="footer-link">Automation Blueprints</Link>
               </li>
             </ul>
           </nav>
 
-          {/* Column 3: Services */}
-          <div className="footer-col" aria-label="Services List">
-            <h4 className="footer-col-title">Services</h4>
+          {/* Column 3: COMPANY */}
+          <div className="footer-col" aria-label="Company Links">
+            <h4 className="footer-col-title">Company</h4>
             <ul className="footer-links-list">
               <li>
-                <a href="#services" className="footer-link">AI Agents</a>
+                <Link to="/about" className="footer-link">About Hutomate</Link>
               </li>
               <li>
-                <a href="#services" className="footer-link">Workflow Automation</a>
+                <Link to="/process" className="footer-link">How We Work</Link>
               </li>
               <li>
-                <a href="#services" className="footer-link">Voice AI</a>
+                <Link to="/integrations" className="footer-link">Integrations</Link>
               </li>
               <li>
-                <a href="#services" className="footer-link">Custom AI Solutions</a>
+                <Link to="/engagement" className="footer-link">Engagement &amp; Pricing</Link>
+              </li>
+              <li>
+                <Link to="/security" className="footer-link">Security &amp; Responsible AI</Link>
+              </li>
+              <li>
+                <Link to="/faq" className="footer-link">FAQ</Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Legal & Info */}
-          <div className="footer-col" aria-label="Legal & Information">
-            <h4 className="footer-col-title">Legal / Info</h4>
+          {/* Column 4: GET IN TOUCH & LEGAL */}
+          <div className="footer-col" aria-label="Contact and Legal Links">
+            <h4 className="footer-col-title">Get In Touch</h4>
             <ul className="footer-links-list">
               <li>
-                <a
-                  href="#"
-                  data-placeholder="true"
-                  title="Coming soon - placeholder link"
-                  className="footer-link footer-link--placeholder"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Privacy Policy
-                </a>
+                <Link to="/start-project" className="footer-link">Start a Project →</Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  data-placeholder="true"
-                  title="Coming soon - placeholder link"
-                  className="footer-link footer-link--placeholder"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  Terms of Service
-                </a>
+                <Link to="/contact" className="footer-link">Contact</Link>
               </li>
-              <li className="footer-info-item">
-                <span
-                  data-placeholder="true"
-                  title="Coming soon - placeholder link"
-                  className="footer-placeholder-note"
-                >
-                  Contact details coming soon
-                </span>
+            </ul>
+
+            <h4 className="footer-col-title footer-col-title--sub">Legal</h4>
+            <ul className="footer-links-list">
+              <li>
+                <Link to="/privacy" className="footer-link">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="/terms" className="footer-link">Terms</Link>
               </li>
             </ul>
           </div>
@@ -147,13 +107,13 @@ export default function Footer() {
         {/* Bottom Bar: Copyright & Back to Top */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © 2024 Hutomate. All rights reserved.
+            © {CURRENT_YEAR} Hutomate. All rights reserved. Custom AI Automation &amp; Systems Implementation.
           </p>
 
           <div className="footer-bottom-actions">
             <div className="footer-status-pill">
               <span className="footer-status-dot" aria-hidden="true" />
-              <span>All Systems Operational</span>
+              <span>Custom Implementations Scoped &amp; Built to Order</span>
             </div>
 
             <button

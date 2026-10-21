@@ -1,0 +1,60 @@
+/* Legal Pages Styles (Privacy & Terms) */
+.legal-page {
+  width: 100%;
+}
+
+.legal-content-container {
+  max-width: 820px;
+  margin: 0 auto;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e5e5);
+  border-radius: var(--radius-lg, 12px);
+  padding: 48px;
+}
+
+.legal-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.legal-section-block {
+  margin-bottom: 36px;
+}
+
+.legal-section-block h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.legal-section-block p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.legal-section-block ul {
+  padding-left: 20px;
+  margin-bottom: 14px;
+}
+
+.legal-section-block li {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .legal-content-container {
+    padding: 24px 20px;
+  }
+}
